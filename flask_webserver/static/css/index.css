@@ -1,0 +1,93 @@
+/* Stylesheet for index.php */
+
+/* ---Class Selectors--- */
+
+.bar1, .bar2, .bar3 {
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+    height: 5px;
+    width: 35px;
+}
+
+.menu_button_wrapper {
+    cursor: pointer;
+    display: inline-block;
+    z-index: 100;
+}
+
+.menu_item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 6%;
+}
+
+.right {
+    float: right;
+}
+
+/* ---More Specific Class Selectors */
+
+.bar1.change {
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+.bar2.change {
+    opacity: 0;
+}
+
+.bar3.change {
+    transform: rotate(45deg) translate(-8px, -8px) ;
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+/* ---ID Selectors--- */
+
+#bottom_border {
+    margin-top: 23%;
+    border-bottom: 3px dotted #ffffff;
+}
+#close_button {
+    cursor: pointer;
+    float: right;
+    font-size: 20pt;
+    margin: 2%;
+    padding: 5px;
+}
+
+#collapsedmenu_button_wrapper {
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+#expandedmenu_button_wrapper {
+    padding-right: 5px;
+    padding-top: 5px;
+}
+
+#menu_header {
+    margin: 1%;
+    padding: 5px;
+    text-align: center;
+}
+
+#menu_wrapper {
+    background-color: #222222;
+    color: #ffffff;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+#rickroll {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 5vh;
+}
+
+#service_header {
+    padding: 15px;
+    border-bottom: 3px dotted #ffffff;
+}

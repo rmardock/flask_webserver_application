@@ -1,0 +1,71 @@
+{% extends 'layout.jinja2' %}
+
+{% block styles %}
+    {# Stylesheets #}
+    {# <link rel="stylesheet" href="{{ url_for('static', filename='css/mainstylesheet.css') }}" type="text/css"> #}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" type="text/css">
+    {# Local copy of jQuery #}
+    <script src="{{ url_for('static', filename='jslib/jquery-3.5.1.min.js') }}"></script>
+    {# JavaScript file for menu bar #}
+    <script src="{{ url_for('static', filename='JavaScript/menu_bar.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div id="collapsedmenu_button_wrapper">
+    <div class="menu_button_wrapper collapsed">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+</div>
+<div id="headerWrapper">
+    <h1 class="header">Home Server</h1>
+    <img id="rickroll" src="{{ url_for('static', filename='img/rickRoll.gif') }}" alt="RickRoll" class="center">
+    {% if err %}
+        <p{{ err }}</p>
+    {% endif %}
+</div>
+<div id="menu_wrapper">
+    <div id="expandedmenu_button_wrapper">
+        <div class="menu_button_wrapper expanded right">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
+    <h4 id="menu_header">Menu</h4>
+    <hr>
+    <ul id="menuUl">
+        <li class="menu_item">
+            <span id="accountUsername"><h5>
+                {# Assign username from session or cookies here #}
+            </h5></span>
+        </li>
+        <li class="menu_item">
+            {# Redirect to to login.php on port 8080 here #}
+            <h4 id="login">
+                <a class="accountLink" href="/login">Login</a>
+            </h4>
+        </li>
+        <li class="menu_item">
+            {# Redirect to signup.php on port 8080 here #}
+        </li>
+    </ul>
+</div>
+<div class="services_wrapper">
+    <h2 id="service_header">These are links to web services hosted by the Home Server</h2>
+    <br>
+    {# Redirect to Plex #}
+    <h4 id="plexmediaserver" class="sbutton">
+        <a class="service_link" onclick="javescript:event.target.port=32400" href="http://192.168.1.253/web">Plex</a>
+    </h4>
+    {# Redirect to Weather App #}
+    <br>
+    <h4 class="message">Weather App is currently down for maintenance</h4>
+    <h4 id="weatherapp" class="sbutton">
+        <a class="service_link">Weather App</a>
+    </h4>
+    <br>
+    <p id="bottom_border"></p>
+</div>
+{% endblock %}
