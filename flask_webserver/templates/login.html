@@ -1,0 +1,45 @@
+{% extends 'layout.jinja2' %}
+
+{% block styles %}
+    {# Stylesheets #}
+    {# <link rel="stylesheet" href="{{ url_for('static', filename='css/mainstylesheet.css') }}" type="text/css"> #}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div id="loginform" class="services_wrapper main">
+    <h2 id="login_header">Login</h2>
+    <br><br>
+    {# Error message if statement here #}
+    <div class="form_wrapper_class center">
+        <form action="/admin" method="POST">
+            {{ form.csrf_token }}
+            <div class="form-field">{{ form.username.label }} {{ form.username(class="form_element") }}
+                {% if form.username.errors %}
+                    <ul class="errors">
+                        {% for error in form.username.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="form-field">{{ form.password.label }} {{ form.password(class="form_element") }}
+                {% if form.password.errors %}
+                    <ul class="errors">
+                        {% if validation_error %}
+                            <li>{{ validation_error }}</li>
+                        {% endif %}
+                        {% for error in form.password.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="form-field">
+                {{ form.login(class="form_element", id="submit_button") }}
+            </div>        
+        </form>
+        <h4 id="home" class="sbutton">
+            <a class="serviceLink" onclick="javascript:event.target.port=8080" href="/">Home</a>
+        </h4>
+{% endblock %}

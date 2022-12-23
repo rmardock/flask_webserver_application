@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flask_webserver
+    ports: 
+    - "8080:5000"
+    volumes:
+    - .:/project
+    environment: 
+      FLASK_ENV: development
+  db:
+    image: mysql:latest
+    container_name: webserver_db
+    volumes:
+      - "./sql:/var/lib/webserver_sql"
+      - "./sql:/docker-entrypoint-initdb.d"
+    environment:
+      MYSQL_ROOT_PASSWORD: database_password
+    ports:
+      - "3366:3306"
+    restart: always

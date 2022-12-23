@@ -1,0 +1,82 @@
+/* Main stylesheet for Home Server Landing Page */
+/* Created by Ryan Mardock */
+
+@font-face {
+    font-family: roboto-mono, 'Roboto Mono', monospace;
+    src: url(/fonts/Roboto_Mono/RobotoMono-Light.ttf);
+}
+
+/* ---Element Selectors--- */
+a {
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    background-color: #272727;
+    padding: 10px;
+    margin-left: 15px;
+    text-align: center;
+}
+
+body {
+    background-color: #272727;
+    color: #ffffff;
+    font-family: roboto-mono;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+html {
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* ---Class Selectors--- */
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.header {
+    padding: 15px;
+    text-align: center;
+}
+
+.message {
+    margin-left: 30px;
+}
+
+.sbutton {
+    padding: 20px;
+}
+
+.services_wrapper {
+    background-color: #2aa470;
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+    height: 65vh;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+/* ---More Specific Element Selectors--- */
+
+a:hover {
+    color: #ffffff;
+}
+
+/* ---Media Queries--- */
+@media screen and (max-width: 800px) {
+    .main {
+        width: 100%;
+    }
+}
