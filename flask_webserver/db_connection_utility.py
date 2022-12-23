@@ -7,7 +7,7 @@ def query_db(username, password):
     db = mysql.connector.connect(
         host="db",
         user="root",
-        password="wMdB1283",
+        password="database_password",
         database="webserver_users",
     )
     
